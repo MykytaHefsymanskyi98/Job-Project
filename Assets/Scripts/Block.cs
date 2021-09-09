@@ -6,6 +6,8 @@ public class Block : MonoBehaviour
 {
     LevelManager levelManager;
 
+    float ballCreatingDelay = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class Block : MonoBehaviour
         {
             Destroy(collision.gameObject);
             DestroyBock();
+            levelManager.Invoke("CreateNewBall", ballCreatingDelay);
         }
     }
 

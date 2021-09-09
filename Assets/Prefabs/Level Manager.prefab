@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCanvas: {fileID: 0}
   pauseCanvas: {fileID: 0}
+  ball: {fileID: 5111994189771143389, guid: 275f30cacead1e74e84d21e52c041b46, type: 3}
+  pivotPoint: {fileID: 8144965956126576241, guid: 1a909e2216068b8488f149eab3bcd14f, type: 3}

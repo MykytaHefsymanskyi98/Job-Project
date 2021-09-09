@@ -6,23 +6,23 @@ public class Defender : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
 
+    LevelManager levelManager;
     Ball ball;
     Rigidbody rb;
+
+    float ballCreatingDelay = 1f;
+    float ballSearchDelay = 1.2f;
+    float moveSpeedDelta = 20f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        ball = FindObjectOfType<Ball>();
+        levelManager = FindObjectOfType<LevelManager>();
+        FindNewBall();
         rb = this.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-         
-    }
     private void FixedUpdate()
     {
         MoveToBall();
@@ -30,15 +30,21 @@ public class Defender : MonoBehaviour
 
     void MoveToBall()
     { 
-        if(ball == null) { return; }
-        if (transform.position.x > ball.transform.position.x)
-        {
-            rb.velocity = new Vector3(-0.1f * moveSpeed * Time.deltaTime, 0f, 0f);
+        if(ball == null) 
+        { 
+            Invoke("FindNewBall", ballSearchDelay); 
         }
-        else if (transform.position.x < ball.transform.position.x)
+        else
         {
-            rb.velocity = new Vector3(0.1f * moveSpeed * Time.deltaTime, 0f, 0f);
-        }
+            if (transform.position.x > ball.transform.position.x)
+            {
+                rb.velocity = new Vector3(-1 * moveSpeed * Time.deltaTime, 0f, 0f);
+            }
+            else 
+            {
+                rb.velocity = new Vector3(1f * moveSpeed * Time.deltaTime, 0f, 0f);
+            }
+        }   
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,6 +52,22 @@ public class Defender : MonoBehaviour
         if(collision.gameObject.tag == "Ball")
         {
             Destroy(collision.gameObject);
+            levelManager.Invoke("CreateNewBall", ballCreatingDelay);
+            Invoke("FindNewBall", ballSearchDelay);
+        }
+    }
+
+    public void IncreaseSpeed()
+    {
+        moveSpeed += moveSpeedDelta;
+    }
+
+    void FindNewBall()
+    {
+        ball = FindObjectOfType<Ball>();
+        if(ball == null) 
+        {
+            Debug.Log("Ball can not be found"); 
         }
     }
 }
