@@ -37,20 +37,19 @@ public class Player : MonoBehaviour
         if (!Touchscreen.current.primaryTouch.IsPressed())
         {
             isMoving = false;
+           // rb.isKinematic = false;
             return;
         }
         else
         {
             isMoving = true;
-            //rb.isKinematic = true;
+           // rb.isKinematic = true;
             Vector3 touchPos = new Vector3(Touchscreen.current.primaryTouch.position.ReadValue().x,
                                             Touchscreen.current.primaryTouch.position.ReadValue().y,
                                             mainCamera.nearClipPlane);
             Vector3 worldCoordinates = mainCamera.ScreenToWorldPoint(touchPos);
             worldCoordinates.y = 0.5f;
             rb.position = worldCoordinates;
-            //Vector3 touchPosInUnits = mainCamera.ScreenToWorldPoint(touchPos);
-            //rb.position = touchPosInUnits;
         }
     }   
     
