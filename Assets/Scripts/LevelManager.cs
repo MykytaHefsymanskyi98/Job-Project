@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     float startingGameSpeed = 1f;
     float currentGameSpeed;
+    int blockCount = 0;
 
 
     // Start is called before the first frame update
@@ -61,6 +62,20 @@ public class LevelManager : MonoBehaviour
         else
         {
             mainCanvas.SetActive(false);
+        }
+    }
+
+    public void CountBlocks()
+    {
+        blockCount++;
+    }
+
+    public void DecreaseBlocksNumber()
+    {
+        blockCount--;
+        if(blockCount <= 0)
+        {
+            Debug.Log("Blocks destroyed");
         }
     }
 }
