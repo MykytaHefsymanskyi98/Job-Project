@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour
 
     Rigidbody playerRb;
     Camera mainCamera;
+    LineRenderer lineRenderer;
+    Ball ball;
 
     bool isMoving;
 
@@ -36,6 +38,7 @@ public class InputManager : MonoBehaviour
         touchControls.Touch.TouchPress.started += ctx => StartTouch(ctx);
         touchControls.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
         playerRb = player.GetComponent<Rigidbody>();
+        lineRenderer = player.GetComponent<LineRenderer>();
         mainCamera = Camera.main;
     }
 
@@ -51,10 +54,12 @@ public class InputManager : MonoBehaviour
             playerRb.isKinematic = true;
             Move(touchControls.Touch.TouchPosition.ReadValue<Vector2>());
             pointer.FindAngle();
+            DrawPointer();
         }
         else if (!isMoving && !managerUI.IsOnPause())
         {
             playerRb.isKinematic = false;
+            CleanPointer();
         }
     }
 
@@ -78,5 +83,21 @@ public class InputManager : MonoBehaviour
         Vector3 screenCoordinates = new Vector3(screenPosition.x, screenPosition.y, mainCamera.nearClipPlane);
         Vector3 worldPos = mainCamera.ScreenToWorldPoint(screenCoordinates);
         player.transform.position = new Vector3(worldPos.x, 0f, worldPos.z);
+    }
+
+    void DrawPointer()
+    {
+        ball = FindObjectOfType<Ball>();
+        if (ball != null)
+        {
+            lineRenderer.SetPosition(0, player.transform.position);
+            lineRenderer.SetPosition(1, ball.transform.position);
+        }
+    }
+
+    void CleanPointer()
+    {
+        lineRenderer.SetPosition(0, player.transform.position);
+        lineRenderer.SetPosition(1, player.transform.position);
     }
 }
