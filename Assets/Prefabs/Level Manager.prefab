@@ -43,7 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c18298299d56346a12f7b308c4c8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCanvas: {fileID: 0}
-  pauseCanvas: {fileID: 0}
   ball: {fileID: 5111994189771143389, guid: 275f30cacead1e74e84d21e52c041b46, type: 3}
-  pivotPoint: {fileID: 8144965956126576241, guid: 1a909e2216068b8488f149eab3bcd14f, type: 3}
+  ballPivotPoint: {fileID: 0}
+  blockLeft: {fileID: 3725405413554053821, guid: 75e28d1bcd1710245b0c7d08595bd724, type: 3}
+  blockMiddle: {fileID: 5800631035961168538, guid: 2d9297c206633e248a649b2ab2493721, type: 3}
+  blockRight: {fileID: 2201608350739837093, guid: 274db625a783c7a42a668c32748b6d88, type: 3}
+  defender: {fileID: 0}
+  managerUI: {fileID: 0}

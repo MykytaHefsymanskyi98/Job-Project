@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Environment objects")]
     [SerializeField] GameObject ball;
-    [SerializeField] Transform pivotPoint;
+    [SerializeField] Transform ballPivotPoint;
     [SerializeField] GameObject blockLeft;
     [SerializeField] GameObject blockMiddle;
     [SerializeField] GameObject blockRight;
@@ -26,12 +26,6 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         currentGameSpeed = startingGameSpeed;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
     }
 
     public void CountBlocks()
@@ -58,7 +52,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            GameObject newBall = Instantiate(ball, pivotPoint.position, Quaternion.identity) as GameObject;
+            GameObject newBall = Instantiate(ball, ballPivotPoint.position, Quaternion.identity) as GameObject;
         }
     }
 

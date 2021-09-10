@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6612556385152912995}
   - component: {fileID: 2237106895521590283}
   - component: {fileID: 2237106895521590284}
-  - component: {fileID: 8899955843103378073}
+  - component: {fileID: 6863830399486108375}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -112,7 +112,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!145 &2237106895521590284
 SpringJoint:
@@ -124,7 +124,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.5, z: -1.48}
+  m_ConnectedAnchor: {x: 0, y: 0.5, z: 1.9800005}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -137,7 +137,7 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &8899955843103378073
+--- !u!114 &6863830399486108375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

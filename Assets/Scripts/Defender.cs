@@ -12,7 +12,7 @@ public class Defender : MonoBehaviour
 
     float ballCreatingDelay = 1f;
     float ballSearchDelay = 1.2f;
-    float moveSpeedDelta = 20f;
+    float moveSpeedDelta = 50f;
 
 
     // Start is called before the first frame update

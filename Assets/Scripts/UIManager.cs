@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     float startingGameSpeed = 1f;
     float currentGameSpeed;
     string currentLevelText = "Current Level: ";
+    bool onPause;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +23,7 @@ public class UIManager : MonoBehaviour
         PauseCanvasSetActivity(false);
         MainCanvasSetActivity(true);
         ShowCurrentLevel();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        currentGameSpeed = startingGameSpeed;
     }
 
     public void StopGame()
@@ -49,10 +45,12 @@ public class UIManager : MonoBehaviour
         if (isActive)
         {
             pauseCanvas.SetActive(true);
+            onPause = true;
         }
         else
         {
             pauseCanvas.SetActive(false);
+            onPause = false;
         }
     }
 
@@ -73,4 +71,8 @@ public class UIManager : MonoBehaviour
         levelText.text = currentLevelText + levelManager.GetCurrentLevel().ToString();
     }
 
+    public bool IsOnPause()
+    {
+        return onPause;
+    }
 }
