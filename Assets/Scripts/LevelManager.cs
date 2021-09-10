@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Environment objects")]
     [SerializeField] GameObject ball;
-    [SerializeField] Transform ballPivotPoint;
+    [SerializeField] Transform pivotPoint;
     [SerializeField] GameObject blockLeft;
     [SerializeField] GameObject blockMiddle;
     [SerializeField] GameObject blockRight;
@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            GameObject newBall = Instantiate(ball, ballPivotPoint.position, Quaternion.identity) as GameObject;
+            GameObject newBall = Instantiate(ball, pivotPoint.position, Quaternion.identity) as GameObject;
         }
     }
 

@@ -552,36 +552,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3296171180779034131, guid: 1a909e2216068b8488f149eab3bcd14f, type: 3}
   m_PrefabInstance: {fileID: 3296171181639014241}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1335421628
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1335421629}
-  m_Layer: 0
-  m_Name: Ball Pivot Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1335421629
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335421628}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.34}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1336975138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1198451739032358946, guid: 249409b8228426d49886c12ad331fcfe, type: 3}
@@ -1373,7 +1343,7 @@ PrefabInstance:
     - target: {fileID: 6633212041909058274, guid: 3928162dd8a1a9541a89ccaa20d3d912, type: 3}
       propertyPath: ballPivotPoint
       value: 
-      objectReference: {fileID: 1335421629}
+      objectReference: {fileID: 0}
     - target: {fileID: 6633212041909058274, guid: 3928162dd8a1a9541a89ccaa20d3d912, type: 3}
       propertyPath: defender
       value: 
@@ -1382,6 +1352,10 @@ PrefabInstance:
       propertyPath: managerUI
       value: 
       objectReference: {fileID: 2680103581521271592}
+    - target: {fileID: 6633212041909058274, guid: 3928162dd8a1a9541a89ccaa20d3d912, type: 3}
+      propertyPath: pivotPoint
+      value: 
+      objectReference: {fileID: 1297072498}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3928162dd8a1a9541a89ccaa20d3d912, type: 3}
 --- !u!114 &3098915017784087097 stripped
@@ -1756,7 +1730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570392441187880181, guid: daef708875e10dc428ac75c6583c58f6, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5570392441187880181, guid: daef708875e10dc428ac75c6583c58f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
