@@ -12,7 +12,6 @@ public class InputManager : MonoBehaviour
     Camera mainCamera;
 
     bool isMoving;
-    float posDeltaZ = 12f;
 
     TouchControls touchControls;
 
@@ -76,7 +75,6 @@ public class InputManager : MonoBehaviour
     {
         Vector3 screenCoordinates = new Vector3(screenPosition.x, screenPosition.y, mainCamera.nearClipPlane);
         Vector3 worldPos = mainCamera.ScreenToWorldPoint(screenCoordinates);
-        // player.transform.position = new Vector3(worldPos.x, 0f, worldPos.z + posDeltaZ);
         player.transform.position = new Vector3(worldPos.x, 0f, worldPos.z);
     }
 }
