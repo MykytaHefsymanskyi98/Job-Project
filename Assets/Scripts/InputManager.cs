@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] UIManager managerUI;
+    [SerializeField] Pointer pointer;
 
     Rigidbody playerRb;
     Camera mainCamera;
@@ -49,6 +50,7 @@ public class InputManager : MonoBehaviour
         {
             playerRb.isKinematic = true;
             Move(touchControls.Touch.TouchPosition.ReadValue<Vector2>());
+            pointer.FindAngle();
         }
         else if (!isMoving && !managerUI.IsOnPause())
         {
